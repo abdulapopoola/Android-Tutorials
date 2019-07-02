@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap" rel="stylesheet">
+        <script defer src="https://use.fontawesome.com/releases/v5.8.2/js/all.js"></script>
+        <title>Guessing Game</title>
+    </head>
+    <body>
+        <div class="wrap">
+            <h1>Guessing Game</h1>
+            <div class="output-container" id="message-container">
+                <h2 id="output"></h2>
+                <button class="btn" onclick="start()">Start New Round</button>
+            </div>
+            <footer>
+                <h3> &copy; 2019</h3>
+            </footer>
+        </div>
+
+        <div class="image-box">
+            <img src="https://source.unsplash.com/350x320/?nature,flowers" alt="Flomers">
+        </div>
+
+        <script>
+            var random = Math.floor(Math.random() * 52);
+            let output;
+
+            function start() {
+             var input = parseInt(prompt('Please enter your guess(below 53):'), 10);
+
+                    if(input < random) {
+                        output = 'That is too low, Try Again!';
+                    }
+                    else if (input > random) {
+                        output = 'That is too high, Try Again!';
+     } else {
+                        output = 'That is Correct!!';
+     }
+
+             document.getElementById('output').innerHTML = output;
+            }
+        </script>
+    </body>
+</html>
